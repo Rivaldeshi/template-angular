@@ -1,0 +1,275 @@
+<app-page-header
+  [title]="'Carousel'"
+  [title1]="'Carousel'"
+  [activeitem]="'Advanced UI'"
+></app-page-header>
+
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Basic Swiper Slide</h5>
+      </div>
+      <div class="box-body">
+        <div class="swiper Swiperslide-1">
+          <div class="swiper-wrapper">
+            <swiper
+              [slidesPerView]="1"
+              (swiper)="setThumbsSwiper($event)"
+              [zoom]="true"
+              [autoplay]="true"
+              [navigation]="false"
+              [watchSlidesProgress]="true"
+            >
+              <ng-template
+                swiperSlide
+                *ngFor="let image of imageData; let i = index"
+              >
+                <div class="swiper-slide">
+                  <img src="{{ image.src }}" alt="image" />
+                </div>
+              </ng-template>
+            </swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Navigation Swiper Slide</h5>
+      </div>
+      <div class="box-body">
+        <div class="swiper mySwiper1">
+          <div class="swiper-wrapper">
+            <swiper
+              [slidesPerView]="1"
+              (swiper)="setThumbsSwiper($event)"
+              [zoom]="true"
+              [autoplay]="true"
+              [navigation]="true"
+              [watchSlidesProgress]="true"
+            >
+              <ng-template
+                swiperSlide
+                *ngFor="let image of imageData1; let i = index"
+              >
+                <div class="swiper-slide">
+                  <img src="{{ image.src }}" alt="image" />
+                </div>
+              </ng-template>
+            </swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Pagination Swiper Slide</h5>
+      </div>
+      <div class="box-body">
+        <div class="swiper mySwiper-page">
+          <div class="swiper-wrapper">
+            <swiper
+              [slidesPerView]="1"
+              (swiper)="setThumbsSwiper($event)"
+              [zoom]="true"
+              [autoplay]="true"
+              [pagination]="true"
+              [navigation]="false"
+              [watchSlidesProgress]="true"
+              [keyboard]="{ enabled: true }"
+              [pagination]="{ clickable: true }"
+              navigation
+            >
+              <ng-template
+                swiperSlide
+                *ngFor="let image of imageData2; let i = index"
+              >
+                <div class="swiper-slide">
+                  <img src="{{ image.src }}" alt="image" />
+                </div>
+              </ng-template>
+            </swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-1 -->
+
+<!-- Start::row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Pagination Progress Swiper Slide</h5>
+      </div>
+      <div class="box-body">
+        <div class="swiper mySwiper3">
+          <div class="swiper-wrapper">
+            <swiper
+              [slidesPerView]="1"
+              (swiper)="setThumbsSwiper($event)"
+              [zoom]="true"
+              [autoplay]="true"
+              [navigation]="true"
+              [watchSlidesProgress]="true"
+              [pagination]="{ type: 'progressbar' }"
+              navigation
+            >
+              <ng-template
+                swiperSlide
+                *ngFor="let image of imageData4; let i = index"
+              >
+                <div class="swiper-slide">
+                  <img src="{{ image.src }}" alt="image" />
+                </div>
+              </ng-template>
+            </swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Scrollbar Swiper Slide</h5>
+      </div>
+      <div class="box-body">
+        <div class="swiper mySwiper4">
+          <div class="swiper-wrapper">
+            <swiper
+              [slidesPerView]="1"
+              (swiper)="setThumbsSwiper($event)"
+              [zoom]="true"
+              [autoplay]="true"
+              [pagination]="false"
+              [navigation]="false"
+              [watchSlidesProgress]="true"
+              [scrollbar]="{
+          hide: true,
+        }"
+            >
+              <ng-template
+                swiperSlide
+                *ngFor="let image of imageData5; let i = index"
+              >
+                <div class="swiper-slide">
+                  <img src="{{ image.src }}" alt="image" />
+                </div>
+              </ng-template>
+            </swiper>
+          </div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Vertical Swiper Slide</h5>
+      </div>
+      <div class="box-body">
+        <div class="swiper mySwiper5 !h-[312px]">
+          <div class="swiper-wrapper">
+            <swiper
+              [slidesPerView]="1"
+              (swiper)="setThumbsSwiper($event)"
+              [zoom]="true"
+              [autoplay]="true"
+              [navigation]="false"
+              [watchSlidesProgress]="true"
+              direction="vertical"
+              [pagination]="{ clickable: true }"
+            >
+              <ng-template
+                swiperSlide
+                *ngFor="let image of imageData6; let i = index"
+              >
+                <div class="swiper-slide">
+                  <img src="{{ image.src }}" alt="image" />
+                </div>
+              </ng-template>
+            </swiper>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-2 -->
+<!-- Start::row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="col-span-12 lg:col-span-6">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Space Between Swiper Slide</h5>
+      </div>
+      <div class="box-body">
+        <div class="swiper mySwiper6">
+          <div class="swiper-wrapper">
+            <swiper
+              [slidesPerView]="6"
+              (swiper)="setThumbsSwiper($event)"
+              [zoom]="true"
+              [autoplay]="false"
+              [pagination]="false"
+              [navigation]="false"
+              [watchSlidesProgress]="true"
+            >
+              <ng-template
+                swiperSlide
+                *ngFor="let image of imageData7; let i = index"
+              >
+                <div class="swiper-slide">
+                  <img src="{{ image.src }}" alt="image" />
+                </div>
+              </ng-template>
+            </swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-6">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Free Mode Swiper Slide</h5>
+      </div>
+      <div class="box-body">
+        <div class="swiper mySwiper7">
+          <div class="swiper-wrapper">
+            <swiper
+              [slidesPerView]="6"
+              (swiper)="setThumbsSwiper($event)"
+              [zoom]="true"
+              [autoplay]="true"
+              [navigation]="false"
+              [watchSlidesProgress]="true"
+              [pagination]="{ clickable: true }"
+            >
+              <ng-template
+                swiperSlide
+                *ngFor="let image of imageData8; let i = index"
+              >
+                <div class="swiper-slide">
+                  <img src="{{ image.src }}" alt="image" />
+                </div>
+              </ng-template>
+            </swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-3 -->

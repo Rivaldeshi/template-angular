@@ -1,0 +1,149 @@
+<app-page-header
+  [title]="'apexcharts'"
+  [title1]="'apexcharts'"
+  [activeitem]="'Chart'"
+></app-page-header>
+
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="col-span-12 xl:col-span-6">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Line Chart</h5>
+      </div>
+      <div class="box-body">
+        <div id="line-chart">
+          <apx-chart
+            [series]="chartOptions.series"
+            [chart]="chartOptions.chart"
+            [xaxis]="chartOptions.xaxis"
+            [dataLabels]="chartOptions.dataLabels"
+            [grid]="chartOptions.grid"
+            [stroke]="chartOptions.stroke"
+            [title]="chartOptions.title"
+             [fill]="chartOptions.fill"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 xl:col-span-6">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Area Chart</h5>
+      </div>
+      <div class="box-body">
+        <div id="area-chart">
+          <apx-chart
+            [series]="chartOptions5.series"
+            [chart]="chartOptions5.chart"
+            [xaxis]="chartOptions5.xaxis"
+            [stroke]="chartOptions5.stroke"
+            [dataLabels]="chartOptions5.dataLabels"
+            [yaxis]="chartOptions5.yaxis"
+            [labels]="chartOptions5.labels"
+            [fill]="chartOptions5.fill"
+            [legend]="chartOptions5.legend"
+            [title]="chartOptions5.title"
+            [subtitle]="chartOptions5.subtitle"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-1 -->
+
+<!-- Start::row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="col-span-12 xl:col-span-6">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Column Chart</h5>
+      </div>
+      <div class="box-body">
+        <div id="column-chart">
+          <apx-chart
+            [series]="chartOptions3.series"
+            [chart]="chartOptions3.chart"
+            [stroke]="chartOptions3.stroke"
+            [dataLabels]="chartOptions3.dataLabels"
+            [plotOptions]="chartOptions3.plotOptions"
+            [xaxis]="chartOptions3.xaxis"
+            [colors]="chartOptions3.colors"
+            [fill]="chartOptions3.fill"
+            [yaxis]="chartOptions3.yaxis"
+            [dataLabels]="chartOptions3.dataLabels"
+            [legend]="chartOptions3.legend"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 xl:col-span-6">
+    <div class="box bar-chart">
+      <div class="box-header">
+        <h5 class="box-title">Bar Chart</h5>
+      </div>
+      <div class="box-body">
+        <div id="bar-chart">
+          <apx-chart
+            [series]="chartOptions2.series"
+            [chart]="chartOptions2.chart"
+            [dataLabels]="chartOptions2.dataLabels"
+            [plotOptions]="chartOptions2.plotOptions"
+            [xaxis]="chartOptions2.xaxis"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-2 -->
+
+<!-- Start::row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="col-span-12 xl:col-span-6">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Line &amp; Column Chart</h5>
+      </div>
+      <div class="box-body">
+        <div id="mixed-linecolumn">
+          <apx-chart
+            [series]="chartOptions6.series"
+            [chart]="chartOptions6.chart"
+            [yaxis]="chartOptions6.yaxis"
+            [xaxis]="chartOptions6.xaxis"
+            [labels]="chartOptions6.labels"
+             [colors]="chartOptions6.colors"
+            [stroke]="chartOptions6.stroke"
+            [title]="chartOptions6.title"
+            [dataLabels]="chartOptions6.dataLabels"
+            [fill]="chartOptions6.fill"
+            [tooltip]="chartOptions6.tooltip"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 xl:col-span-6">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Pie Chart</h5>
+      </div>
+      <div class="box-body">
+        <div id="timeline-basic">
+          <apx-chart
+    [series]="chartOptions4.series"
+    [chart]="chartOptions4.chart"
+      [colors]="chartOptions4.colors"
+    [plotOptions]="chartOptions4.plotOptions"
+    [xaxis]="chartOptions4.xaxis"
+  ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-3 -->

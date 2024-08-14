@@ -1,0 +1,30 @@
+::ng-deep {
+    .slide-menu .child1 {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        transform: translate(1105px, 50px);
+        display: block;
+    }
+
+    .open {
+        .slide-menu.child1.active {
+            display: block !important;
+        }
+    }
+
+    .child2.open,
+    .child3.open {
+        display: block !important;
+    }
+
+    .light {
+        @media (min-width: 992px) {
+            [data-menu-styles="dark"][data-nav-layout="horizontal"] .app-sidebar .slide.has-sub .slide-menu.child1 {
+                background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+            }
+        }
+    }
+}

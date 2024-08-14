@@ -1,0 +1,94 @@
+<app-page-header title="Product List" title1="Product List" activeitem="Pages"></app-page-header>
+
+        <!-- Start::row-1 -->
+        <div class="box">
+          <div class="box-header lg:flex lg:justify-between space-y-2 lg:space-y-0">
+            <h5 class="box-title my-auto">Products List</h5>
+            <a routerLink="/ecommerce/add-product" class="ti-btn ti-btn-primary m-0 py-2"><i class="ri ri-add-line"></i>Add
+              Product</a>
+          </div>
+          <div class="box-body">
+            <div class="table-bordered whitespace-nowrap rounded-sm overflow-auto">
+              <table class="ti-custom-table ti-custom-table-head edit-table">
+                <thead class="bg-gray-100 dark:bg-black/20">
+                  <tr class="">
+                    <th scope="col" class="dark:text-white/70">
+                      <div class="flex leading-[0] justify-center">
+                        <input type="checkbox" (change)="isSelected = true" class="border-gray-500 ti-form-checkbox mt-0.5 check-all"
+                          id="hs-default-checkbox">
+                        <label for="hs-default-checkbox" class="text-sm text-gray-500 dark:text-white/70"></label>
+                      </div>
+                    </th>
+                    <th scope="col" class="dark:text-white/70">Product Id</th>
+                    <th scope="col" class="dark:text-white/70">Product</th>
+                    <th scope="col" class="dark:text-white/70">Category</th>
+                    <th scope="col" class="dark:text-white/70">Price</th>
+                    <th scope="col" class="dark:text-white/70">Stock</th>
+                    <th scope="col" class="dark:text-white/70">Status</th>
+                    <th scope="col" class="dark:text-white/70">Date</th>
+                    <th scope="col" class="!text-end dark:text-white/70">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="product-list" *ngFor="let product of Products">
+                    <td class="">
+                      <div class="flex items-center h-5 product-checkbox justify-center">
+                        <input id="product-check-1" [checked]="isSelected"  type="checkbox" class="border-gray-500 ti-form-checkbox">
+                        <label for="product-check-1" class="sr-only">Checkbox</label>
+                      </div>
+                    </td>
+                    <td class="font-semibold">{{product.id}}</td>
+                    <td>
+                      <div class="flex space-x-3 rtl:space-x-reverse">
+                        <img class="avatar avatar-sm rounded-sm bg-gray-100 dark:bg-black/20 p-1"
+                          src={{product.src}} alt="Image Description">
+                        <span
+                          class="block text-sm font-semibold text-gray-800 dark:text-white my-auto truncate lg:max-w-[100px]">
+                         {{product.name}} </span>
+                      </div>
+                    </td>
+                    <td>{{product.category}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.stock}}</td>
+                    <td>{{product.status}}</td>
+                    <td>{{product.status}}</td>
+                    <td class="text-end font-medium">
+                      <a aria-label="anchor" routerLink="/ecommerce/product-details"
+                        class="w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-warning">
+                        <i class="ti ti-eye"></i>
+                      </a>
+                      <a aria-label="anchor" routerLink="/ecommerce/edit-product"
+                        class="w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-secondary">
+                        <i class="ti ti-pencil"></i>
+                      </a>
+                      <a aria-label="anchor" href="javascript:void(0);"
+                        class="product-btn w-8 h-8 ti-btn rounded-full p-0 transition-none focus:outline-none ti-btn-soft-danger" (click)="click(product.id)">
+                        <i class="ti ti-trash"></i>
+                      </a>
+                    </td>
+                  </tr>
+                
+                </tbody>
+              </table>
+            </div>
+            <nav class="flex justify-end items-center space-x-2 rtl:space-x-reverse mt-5">
+              <a class="w-10 h-10 bg-transparent text-gray-500 hover:bg-primary hover:text-white p-2 inline-flex justify-center text-sm font-medium items-center gap-2 rounded-full"
+                href="javascript:void(0);">
+                <span aria-hidden="true">«</span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="w-10 h-10 bg-primary text-white p-2 inline-flex items-center justify-center text-sm font-medium rounded-full"
+                href="javascript:void(0);" aria-current="page">1</a>
+              <a class="w-10 h-10 bg-transparent text-gray-500 hover:bg-primary hover:text-white p-2 inline-flex justify-center items-center text-sm font-medium rounded-full"
+                href="javascript:void(0);">2</a>
+              <a class="w-10 h-10 bg-transparent text-gray-500 hover:bg-primary hover:text-white p-2 inline-flex justify-center items-center text-sm font-medium rounded-full"
+                href="javascript:void(0);">3</a>
+              <a class="w-10 h-10 bg-transparent text-gray-500 hover:bg-primary hover:text-white p-2 inline-flex justify-center text-sm font-medium items-center gap-2 rounded-full"
+                href="javascript:void(0);">
+                <span class="sr-only">Next</span>
+                <span aria-hidden="true">»</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+        <!-- End::row-1 -->

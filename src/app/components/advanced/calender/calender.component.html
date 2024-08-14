@@ -1,0 +1,248 @@
+<app-page-header
+  [title]="'Calender'"
+  [title1]="'Calender'" 
+  [activeitem]="'Advanced UI'"
+></app-page-header>
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-6">   
+  <div class="col-span-12 xl:col-span-3">
+    <div class="box">  
+      <div class="box-header">
+        <button type="button" class="ti-btn ti-btn-soft-primary m-0 w-full"> 
+          <i class="ri-add-line"></i>Create New Event
+        </button>
+      </div>
+      <div class="box-body p-0">
+        <div class="p-4" id="external-events">  
+          <div
+            mwlDroppable
+            (drop)="externalDrop($event.dropData.event)"
+            dragOverClass="drag-over"
+          >
+            <div>
+              <p *ngIf="events.length === 0"><em>No events added</em></p>
+              <ul>
+                <li
+                  *ngFor="let event of events"  
+                  mwlDraggable
+                  [dropData]="{ event: event }" 
+                  [touchStartLongPress]="{ delay: 300, delta: 30 }"
+                  dragActiveClass="drag-active"
+                  class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event !bg-secondary !border-secondary text-black"
+                  data-class="bg-secondary"
+                >
+                  <a href="javascript:;">
+                    {{ event.title }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-y border-dashed border-gray-200 dark:border-white/10"
+        >
+          <div class="p-4 flex items-center justify-between">
+            <h6 class="font-semibold my-auto text-xl">Activity :</h6>
+            <button
+              type="button"
+              class="ti-btn ti-btn-soft-primary m-0 px-2 py-1"
+            >
+              View All
+            </button>
+          </div>
+          <div class="p-4" id="full-calendar-activity">
+            <ul class="fullcalendar-events-activity">
+              <li>
+                <div class="flex items-center justify-between">
+                  <p class="mb-1 text-sm font-semibold">Monday, Jan 1,2023</p>
+                  <span
+                    class="badge rounded-sm bg-gray-100 text-gray-800 mb-1 p-1"
+                    >12:00PM-1:00PM</span
+                  >
+                </div>
+                <p class="mb-0 text-gray-500 dark:text-white/70 text-xs">
+                  Meeting with a client about new project requirement.
+                </p>
+              </li>
+              <li>
+                <div class="flex items-center justify-between">
+                  <p class="mb-1 text-sm font-semibold">
+                    Thursday, Dec 29,2022
+                  </p>
+                  <span class="badge rounded-sm bg-success text-white mb-1 p-1"
+                    >Completed</span
+                  >
+                </div>
+                <p class="mb-0 text-gray-500 dark:text-white/70 text-xs">
+                  Birthday party of niha suka
+                </p>
+              </li>
+              <li>
+                <div class="flex items-center justify-between">
+                  <p class="mb-1 text-sm font-semibold">
+                    Wednesday, Jan 3,2023
+                  </p>
+                  <span
+                    class="badge rounded-sm bg-warning/10 text-warning mb-1 p-1"
+                    >Reminder</span
+                  >
+                </div>
+                <p class="mb-0 text-gray-500 dark:text-white/70 text-xs">
+                  WOrk taget for new project is completing
+                </p>
+              </li>
+              <li>
+                <div class="flex items-center justify-between">
+                  <p class="mb-1 text-sm font-semibold">Friday, Jan 20,2023</p>
+                  <span
+                    class="badge rounded-sm bg-gray-100 text-gray-800 mb-1 p-1"
+                    >06:00PM - 09:00PM</span
+                  >
+                </div>
+                <p class="mb-0 text-gray-500 dark:text-white/70 text-xs">
+                  Watch new movie with family
+                </p>
+              </li>
+              <li>
+                <div class="flex items-center justify-between">
+                  <p class="mb-1 text-sm font-semibold">
+                    Saturday, Jan 07,2023
+                  </p>
+                  <span
+                    class="badge rounded-sm bg-danger/10 text-danger mb-1 p-1"
+                    >Due Date</span
+                  >
+                </div>
+                <p class="mb-0 text-gray-500 dark:text-white/70 text-xs">
+                  Last day to pay the electricity bill and water bill.need to
+                  check the bank details.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="p-4 pb-0">
+          <img src="./assets/img/png-images/12.png" alt="" class="mx-auto" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 xl:col-span-9">
+    <div class="box">
+      <div class="box-body">
+        <div id="calendar2">
+          <div class="col-xl-10" id="external-events-1">
+            <div class="row text-center block sm:flex sm:justify-between">
+              <div class="col-md-4 text-left">
+                <div class="btn-group">
+                  <div
+                    class="btn btn-primary pl-3 pr-3"
+                    mwlCalendarPreviousView
+                    [view]="view"
+                    [(viewDate)]="viewDate"
+                    (viewDateChange)="closeOpenMonthViewDay()"
+                  >
+                    <i class="ri-arrow-left-s-line" aria-hidden="true"></i>
+                  </div>
+                  <div
+                    class="btn btn-primary pl-3 pr-3"
+                    mwlCalendarNextView
+                    [view]="view"
+                    [(viewDate)]="viewDate"
+                    (viewDateChange)="closeOpenMonthViewDay()"
+                  >
+                    <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
+                  </div>
+                  <div
+                    class="btn btn-primary ml-2"
+                    mwlCalendarToday
+                    [(viewDate)]="viewDate"
+                  >
+                    Today
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <h3 class="text-base">
+                  {{ viewDate | calendarDate : view + "ViewTitle" : "en" }}
+                </h3>
+              </div>
+              <div class="col-md-4 text-right">
+                <div class="btn-group">
+                  <div
+                    class="btn btn-primary"
+                    (click)="setView(CalendarView.Month)"
+                    [class.active]="view === CalendarView.Month"
+                  >
+                    Month
+                  </div>
+                  <div
+                    class="btn btn-primary"
+                    (click)="setView(CalendarView.Week)"
+                    [class.active]="view === CalendarView.Week"
+                  >
+                    Week
+                  </div>
+                  <div
+                    class="btn btn-primary"
+                    (click)="setView(CalendarView.Day)"
+                    [class.active]="view === CalendarView.Day"
+                  >
+                    Day
+                  </div>
+                  <button
+                    class="btn btn-raised btn-primary float-right"
+                    (click)="addEvent()"
+                  >
+                    Add Event
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12"></div>
+            </div>
+            <br />
+
+            <div [ngSwitch]="view">
+              <mwl-calendar-month-view
+                *ngSwitchCase="CalendarView.Month"
+                [viewDate]="viewDate"
+                [events]="events"
+                [activeDayIsOpen]="activeDayIsOpen"
+                [refresh]="refresh"
+                (dayClicked)="dayClicked($event.day)"
+                (eventClicked)="handleEvent('Clicked', $event.event)"
+                (eventTimesChanged)="eventTimesChanged($event)"
+              >
+              </mwl-calendar-month-view>
+              <mwl-calendar-week-view
+                *ngSwitchCase="CalendarView.Week"
+                [viewDate]="viewDate"
+                [events]="events"
+                [refresh]="refresh"
+                [snapDraggedEvents]="false"
+                (eventClicked)="handleEvent('Clicked', $event.event)"
+                (eventTimesChanged)="eventDropped($event)"
+              >
+              </mwl-calendar-week-view>
+              <mwl-calendar-day-view
+                *ngSwitchCase="CalendarView.Day"
+                [viewDate]="viewDate"
+                [events]="events"
+                [refresh]="refresh"
+                [snapDraggedEvents]="false"
+                (eventClicked)="handleEvent('Clicked', $event.event)"
+                (eventTimesChanged)="eventDropped($event)"
+              >
+              </mwl-calendar-day-view>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-1 -->

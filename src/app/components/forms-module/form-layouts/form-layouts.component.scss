@@ -1,0 +1,12 @@
+::ng-deep{
+    .dark .ti-form-input {
+            border-color: rgb(255 255 255 / 0.1);
+            background-color: rgb(var(--dark-bg));
+            color: rgb(255 255 255 / 0.7);
+            --tw-shadow-color: rgb(255 255 255 / 0.1);
+            --tw-shadow: var(--tw-shadow-colored);
+        }
+                // .mat-datepicker-content-container{
+                //     background-color:rgb(var(--dark-bg));
+                // }
+}

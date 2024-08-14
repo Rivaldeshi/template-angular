@@ -1,0 +1,39 @@
+::ng-deep{
+.ti-form-select .product-des-select .ng-select-searchable .ng-select-clearable .ng-select .ng-select-single .ng-select-opened .ng-select-top{
+     padding-right: -1.75rem;
+    }
+
+     .thumbnail .keen-slider__slide.active {
+   border-color: rgb(226 232 240 / var(--tw-border-opacity));
+   box-shadow: 0px 1px 9px 4px rgba(0, 0, 0, 0.15);
+ }
+
+//  .ngkeen-slider .primoslider-icon {
+//    color: rgba(255, 255, 255, 0.8);
+//    border: 1px solid rgba(0, 0, 0, 0.3);
+//    background: rgba(0, 0, 0, 0.5);
+//    padding: 5px;
+//    width: 38px;
+//    height: 38px;
+//    border-radius: 50px;
+//  }
+
+// .swiper-thumbs .swiper-slide .active{
+//      border: rgb(226 232 240 / var(--tw-border-opacity));
+// }
+ .primoslider-chevron-right,
+ .primoslider-chevron-left {
+     position: absolute;
+     top: 50%;
+     width: calc(var(--swiper-navigation-size) / 44 * 27);
+     height: var(--swiper-navigation-size);
+     margin-top: calc(0px - var(--swiper-navigation-size) / 2);
+     z-index: 10;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: rgba(255, 255, 255, 0.5); 
+ }
+
+}

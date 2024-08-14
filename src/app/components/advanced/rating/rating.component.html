@@ -1,0 +1,222 @@
+<app-page-header
+  [title]="'Rating'"
+  [title1]="'Rating'"
+  [activeitem]="'Advanced UI'"
+></app-page-header>
+
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 xxl:gap-x-5">
+  <div class="col-span-12 xxl:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Basic Rater</h5>
+      </div>
+      <div class="box-body">
+        <div
+          class="p-5 border border-dashed border-gray-200 dark:border-white/10 rounded-sm"
+        >
+          <div class="sm:flex items-center justify-between">
+            <p class="text-sm mb-0 font-semibold">
+              Show Some <span class="text-danger">❤</span> with rating :
+            </p>
+            <div id="rater-basic">
+              <bar-rating
+                [(rate)]="starRate1"
+                [max]="5"
+                [theme]="'default'"
+              ></bar-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 xxl:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">5 Squar Rater With Steps</h5>
+      </div>
+      <div class="box-body">
+        <div
+          class="p-5 border border-dashed border-gray-200 dark:border-white/10 rounded-sm"
+        >
+          <div class="sm:flex items-center justify-between">
+            <p class="text-sm mb-0 font-semibold">
+              Dont forget to rate the product :
+            </p>
+            <div id="rater-steps">
+              <bar-rating
+                [(rate)]="starRate"
+                [max]="5"
+                [theme]="'square'"
+              ></bar-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 xxl:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Custom messages</h5>
+      </div>
+      <div class="box-body text-center">
+        <div
+          class="p-5 border border-dashed border-gray-200 dark:border-white/10 rounded-sm"
+        >
+          <div class="sm:flex items-center justify-between">
+            <p class="text-sm mb-0 font-semibold">
+              Your rating is much appreciated👏 :
+            </p>
+            <div id="custom-messages">
+              <bar-rating
+                [(rate)]="starRate2"
+                [max]="10"
+                [theme]="'horizontal'"
+              ></bar-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-1 -->
+
+<!-- Start::row-2 -->
+<div class="grid grid-cols-12 xxl:gap-x-5">
+  <div class="col-span-12 xxl:col-span-6">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Unlimited number of stars readOnly</h5>
+      </div>
+      <div class="box-body">
+        <div
+          class="p-5 border border-dashed border-gray-200 dark:border-white/10 rounded-sm overflow-hidden"
+        >
+          <div class="sm:flex items-center justify-between">
+            <p class="text-sm mb-0 font-semibold">
+              Your rating is much appreciated👏 :
+            </p>
+            <div id="stars-unlimited">
+              <bar-rating
+                [(rate)]="starRate3"
+                [max]="10"
+                [theme]="'stars'"
+              ></bar-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 xxl:col-span-6">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">
+          5 movie rater with custom isBusyText and simulated backend
+        </h5>
+      </div>
+      <div class="box-body">
+        <div
+          class="p-5 border border-dashed border-gray-200 dark:border-white/10 rounded-sm"
+        >
+          <div class="sm:flex items-center justify-between">
+            <p class="text-sm mb-0 font-semibold">Thanks for rating :</p>
+            <div id="stars-busytext">
+              <bar-rating
+                [(rate)]="starRate4"
+                [max]="5"
+                [theme]="'movie'"
+                [showText]="true"
+                [titles]="['Bad', 'Mediocre', 'Good', 'Awesome']"
+              ></bar-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-2 -->
+
+<!-- Start::row-3 -->
+<div class="grid grid-cols-12 xxl:gap-x-5">
+  <div class="col-span-12 xxl:col-span-6">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">On hover event</h5>
+      </div>
+      <div class="box-body">
+        <div
+          class="p-5 border border-dashed border-gray-200 dark:border-white/10 rounded-sm"
+        >
+          <div class="sm:flex items-center justify-between">
+            <p class="text-sm mb-0 font-semibold">
+              Please give your valuable rating :
+            </p>
+            <div class="flex items-center">
+              <div id="stars-hover">
+                <div class="cont">
+                  <div class="stars">
+                    <bar-rating
+                      [(rate)]="starRate5"
+                      [max]="5"
+                      [theme]="'stars'"
+                    ></bar-rating>
+                    <button
+                      type="button"
+                      aria-label="button"
+                      class="ti-btn ti-btn-soft-success py-1 px-2 ltr:!ml-3 rtl:!mr-3 mt-1 "
+                      id="rater-reset-button"
+                    >
+                      <i>Rating:{{ starRate5 }}</i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 xxl:col-span-6">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Clear/reset rater</h5>
+      </div>
+      <div class="box-body">
+        <div
+          class="p-5 border border-dashed border-gray-200 dark:border-white/10 rounded-sm"
+        >
+          <div class="sm:flex items-center justify-between">
+            <p class="text-sm mb-0 font-semibold">
+              Please give your valuable rating :
+            </p>
+            <div class="flex items-center flex-wrap">
+              <div id="rater-reset">
+                <bar-rating
+                  [(rate)]="starRate6"
+                  [max]="5"
+                  [theme]="'stars'"
+                ></bar-rating>
+              </div>
+              <button
+                type="button"
+                aria-label="button"
+                class="ti-btn ti-btn-soft-danger py-1 px-2 ltr:!ml-3 rtl:!mr-3 my-px"
+                (click)="reset()"
+                id="rater-reset-button"
+              >
+                <i class="ri-restart-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-3 -->

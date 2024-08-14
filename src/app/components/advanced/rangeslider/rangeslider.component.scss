@@ -1,0 +1,18 @@
+::ng-deep{
+.responsive-overlay.active {
+        visibility: hidden !important;
+        --tw-bg-opacity: 0.5;
+    }
+     .ngx-slider-span.ngx-slider-bubble.ngx-slider-limit.ngx-slider-ceil{
+         visibility: hidden !important;
+     }
+        .ngx-slider-span.ngx-slider-bubble.ngx-slider-model-value{
+               visibility: hidden !important;
+        }
+                .ngx-slider-span.ngx-slider-bubble.ngx-slider-limit.ngx-slider-floor{
+                    visibility: hidden !important;
+                }
+
+               
+                
+}

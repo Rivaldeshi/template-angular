@@ -1,0 +1,15 @@
+::ng-deep{
+   
+        .dark {
+            .ng-select.ng-select-single .ng-select-container {
+                    border-color: rgb(255 255 255 / 0.1) !important;
+                    background-color: rgb(var(--dark-bg)) !important;
+                    color: rgb(255 255 255 / 0.7) !important;
+                }
+            
+                .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+                    background-color: rgb(var(--dark-bg)) !important;
+                    color: rgb(255 255 255 / 0.7) !important;
+                }
+        }
+    }

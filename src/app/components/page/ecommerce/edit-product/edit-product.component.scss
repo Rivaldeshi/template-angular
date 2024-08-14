@@ -1,0 +1,7 @@
+::ng-deep{
+    .dark {
+    .ng-select .ng-select-container{
+        background-color: rgb(var(--dark-bg));
+    }
+    }
+}

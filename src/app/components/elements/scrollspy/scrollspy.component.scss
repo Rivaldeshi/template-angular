@@ -1,0 +1,7 @@
+::ng-deep{
+    .dark {
+        .bg-white{
+            background-color: rgb(var(--dark-bg));
+        }
+    }
+}

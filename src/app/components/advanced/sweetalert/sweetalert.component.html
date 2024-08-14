@@ -1,0 +1,295 @@
+<app-page-header
+  [title]="'Sweet Alert'"
+  [title1]="'Sweet Alert'"
+  [activeitem]="'Advanced UI'"
+></app-page-header>
+
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-5">
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Basic Sweetalert</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary show-example-btn"
+          aria-label="Try me! Example: A basic message"
+          id="basic"
+          (click)="basicAlert()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Danger Sweetalert</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary"
+          aria-label="Try me! Example: A modal with a title, an error icon, a text, and a footer"
+          id="error-sweetalert"
+          (click)="dangerAlert()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Image Sweetalert</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary"
+          aria-label="Try me! Example: A modal window with a long content inside"
+          id="image-sweetalert"
+          (click)="imageAlert()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Sweetalert With 3Buttons</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary"
+          aria-label="Try me! Example: A dialog with three buttons"
+          id="sweetalert2"
+          (click)="buttonsAlert()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-1 -->
+
+<!-- Start::row-2 -->
+<div class="grid grid-cols-12 gap-x-5">
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Sweetalert With Animation</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary"
+          aria-label="Try me!"
+          id="sweetalert3"
+          (click)="animationAlert()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Sweetalert style 1</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary"
+          aria-label="Try me! Example: A title with a text under"
+          id="sweetalert1"
+          (click)="basicAlert1()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Sweetalert style-2</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary show-example-btn"
+          aria-label="Try me! Example: A custom positioned dialog"
+          id="confirm-btn"
+          (click)="basicAlert2()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Sweetalert style-3</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary show-example-btn"
+          aria-label="Try me! Example: A custom positioned dialog"
+          id="sweetalert4"
+          (click)="basicAlert3()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-2 -->
+
+<!-- Start::row-3 -->
+<div class="grid grid-cols-12 gap-x-5">
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Top-End Sweetalert</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary show-example-btn"
+          aria-label="Try me! Example: A custom positioned dialog"
+          id="top-end"
+          (click)="basicAlert4()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Top-Start Sweetalert</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary show-example-btn"
+          aria-label="Try me! Example: A custom positioned dialog"
+          id="top-start"
+          (click)="basicAlert5()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Bottom-Start Sweetalert</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary show-example-btn"
+          aria-label="Try me! Example: A custom positioned dialog"
+          id="bottom-start"
+          (click)="basicAlert6()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-3">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Bottom-End Sweetalert</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary show-example-btn"
+          aria-label="Try me! Example: A custom positioned dialog"
+          id="bottom-end"
+          (click)="basicAlert7()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-3 -->
+
+<!-- Start::row-4 -->
+<div class="grid grid-cols-12 gap-x-5">
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">A message with customization</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary show-example-btn"
+          aria-label="Try me! Example: A custom positioned dialog"
+          id="customized-btn"
+          (click)="basicAlert8()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Timer Sweetalert</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          class="ti-btn ti-btn-primary show-example-btn"
+          aria-label="Try me! Example: A message with auto close timer"
+          id="timer-btn"
+          (click)="timerAlert()"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Email Validation Sweetalert</h5>
+      </div>
+      <div class="box-body text-center">
+        <button
+          type="button"
+          (click)="openSwal()"
+          class="ti-btn ti-btn-primary show-example-btn"
+          aria-label="Try me! Example: AJAX request"
+          id="ajax-btn"
+        >
+          Try me!
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-4 -->

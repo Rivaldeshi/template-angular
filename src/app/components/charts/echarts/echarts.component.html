@@ -1,0 +1,109 @@
+<app-page-header title="ECharts" title1="ECharts" activeitem="ECharts"></app-page-header>
+
+     <!-- Start::row-1 -->
+     <div class="grid grid-cols-12 gap-x-6">
+      <div class="col-span-12 xl:col-span-6">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">
+              Basic Line Chart
+            </h5>
+          </div>
+          <div class="box-body">
+            <div id="echart-basic-line" class="echart-charts">
+              <div echarts class="ht-300" [options]="echartHorizontalLineBarChart"></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 xl:col-span-6">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">
+              Smoothed Line Chart
+            </h5>
+          </div>
+          <div class="box-body">
+            <div id="echart-smoothed-line" class="echart-charts">
+              <div echarts class="ht-300" [options]="dataAttributes2"></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 xl:col-span-6">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">
+              Bar Chart
+            </h5>
+          </div>
+          <div class="box-body">
+            <div id="echart-basic-area" class="echart-charts">
+              <div echarts class="ht-100" [options]="echartHorizontalLineChart"></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 xl:col-span-6">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">
+              Horizontal Bar Chart
+            </h5>
+          </div>
+          <div class="box-body">
+            <div id="echart-stacked-line" class="echart-charts">
+              <div echarts class="ht-100" [options]="echartStackedBarChart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 xl:col-span-6">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">
+              Stacked Bar Chart
+            </h5>
+          </div>
+          <div class="box-body">
+            <div id="echart-stacked-area" class="echart-charts">
+              <div echarts class="ht-100" [options]="echartLineOption"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 xl:col-span-6">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">
+              Step Line Chart
+            </h5>
+          </div>
+          <div class="box-body">
+            <div id="echart-step-line" class="echart-charts">
+              <div echarts class="ht-300" [options]=" echartHoriStackedBarChart"></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 xl:col-span-6">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">
+              Basic Bar Chart
+            </h5>
+          </div>
+          <div class="box-body">
+            <div id="echart-bar-basic" class="echart-charts">
+              <div echarts class="ht-400" [options]="dataAttributes3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+    </div>
+    <!-- End::row-1 -->

@@ -1,0 +1,93 @@
+
+<app-page-header [title]="'Notifications'" [title1]="'Notifications'" [activeitem]="'Advanced UI'"></app-page-header>
+   <!-- Start::row-1 -->
+        <div class="grid grid-cols-12 gap-x-5">
+          <div class="col-span-12 lg:col-span-3">
+            <div class="box">
+              <div class="box-header">
+                <h5 class="box-title">Basic Notification</h5>
+              </div>
+              <div class="box-body text-center">
+                <button class="ti-btn ti-btn-primary toast-Tip" (click)="showInfo()">Async notification</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-3">
+            <div class="box">
+              <div class="box-header">
+                <h5 class="box-title">Async Notification With Error Message</h5>
+              </div>
+              <div class="box-body text-center">
+                <button type="button" class="ti-btn ti-btn-primary"   (click)="showError()" id="async-error">Async Notification</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-3">
+            <div class="box">
+              <div class="box-header">
+                <h5 class="box-title">Async Notification With Success Message</h5>
+              </div>
+              <div class="box-body text-center">
+                <button type="button" class="ti-btn ti-btn-primary"  (click)="showSuccess()" id="async-success">Async Notification</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-3">
+            <div class="box">
+              <div class="box-header">
+                <h5 class="box-title">PopUp Notification</h5>
+              </div>
+              <div class="box-body text-center">
+                <button type="button" class="ti-btn ti-btn-primary" (click)="Notification()" id="popup">Notification</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End::row-1 -->
+
+        <!-- Start::row-2 -->
+        <div class="grid grid-cols-12 gap-x-5">
+          <div class="col-span-12 lg:col-span-3">
+            <div class="box">
+              <div class="box-header">
+                <h5 class="box-title">Info Notification</h5>
+              </div>
+              <div class="box-body text-center">
+                <button type="button" class="ti-btn  ti-btn-info" (click)="showInfo()" id="info">Info Notification</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-3">
+            <div class="box">
+              <div class="box-header">
+                <h5 class="box-title">Success Notification</h5>
+              </div>
+              <div class="box-body text-center">
+                <button type="button" class="ti-btn  ti-btn-success"  (click)="showSuccess()" id="success">Success Notification</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-3">
+            <div class="box">
+              <div class="box-header">
+                <h5 class="box-title">Warning Notification</h5>
+              </div>
+              <div class="box-body text-center">
+                <button type="button" class="ti-btn ti-btn-warning" (click)="ShowWarning()"  id="warning">Warning Notification</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-3">
+            <div class="box">
+              <div class="box-header">
+                <h5 class="box-title">Error Notification</h5>
+              </div>
+              <div class="box-body text-center">
+                <button type="button" class="ti-btn ti-btn-danger" (click)="showError()" id="error">Error Notification</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End::row-2 -->
+
+     

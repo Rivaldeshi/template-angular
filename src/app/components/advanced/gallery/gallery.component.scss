@@ -1,0 +1,13 @@
+::ng-deep{
+    // .gallery2 .plain-container .image{
+    //     width: 367px !important;
+    //     height: 250px !important;
+    // }
+    // .gallery3 .plain-container .image{
+    //     width: 367px !important;
+    //         height: 250px !important;
+    // }
+  .cdk-overlay-container {
+      @apply z-[99] #{!important};
+    }
+}

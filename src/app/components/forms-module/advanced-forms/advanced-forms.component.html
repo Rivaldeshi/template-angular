@@ -1,0 +1,302 @@
+<app-page-header title="Advanced Forms" title1="AdvancedForms" activeitem="Forms"></app-page-header>
+
+
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="col-span-12 lg:col-span-6 xl:col-span-6 xxl:col-span-3">
+        <div class="box">
+            <div class="box-header">
+                <h5 class="box-title">Basic Date Picker</h5>
+            </div>
+            <div class="box-body">
+                <div class="flex rounded-md shadow-sm">
+                    <mat-form-field>
+                        <mat-label>Choose Date</mat-label>
+                        <input matInput [matDatepicker]="dp1" type="text"
+                            class="ti-form-input rounded-l-none focus:z-10 flatpickr-input" id="datetime">
+                        <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+                        <mat-datepicker #dp1></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-12 lg:col-span-6 xl:col-span-6 xxl:col-span-3">
+        <div class="box">
+            <div class="box-header">
+                <h5 class="box-title">Date Time Picker</h5>
+            </div>
+            <div class="box-body">
+                <div class="flex rounded-md shadow-sm">
+                    <div
+                        class="w-full border-none inline-flex items-center min-w-fit ltr:rounded-l-sm rtl:rounded-r-sm border ltr:border-r-0 rtl:border-l-0 border-gray-200 bg-gray-50 dark:bg-black/20 dark:border-white/10">
+
+                        <mat-form-field>
+                            <mat-label>Choose Date</mat-label>
+                            <input class="ti-form-input rounded-l-none focus:z-10 flatpickr-input active" matInput
+                                [matDatepicker]="dp2" type="text"
+                                class="ti-form-input rounded-l-none focus:z-10 flatpickr-input" id="datetime">
+                            <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+                            <mat-datepicker #dp2></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-12 lg:col-span-6 xl:col-span-6 xxl:col-span-3">
+        <div class="box">
+            <div class="box-header">
+                <h5 class="box-title">Human Friendly Date Picker</h5>
+            </div>
+            <div class="box-body">
+                <div class="flex rounded-md shadow-sm">
+                    <mat-form-field>
+                        <mat-label>Choose Date</mat-label>
+                        <input matInput [matDatepicker]="dp3" type="text"
+                            class="ti-form-input rounded-l-none focus:z-10 flatpickr-input" id="blog-date">
+                        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                        <mat-datepicker #dp3></mat-datepicker>
+                    </mat-form-field>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-12 lg:col-span-6 xl:col-span-6 xxl:col-span-3">
+        <div class="box">
+            <div class="box-header">
+                <h5 class="box-title">Date Range Picker</h5>
+            </div>
+            <div class="box-body">
+                <div class="flex rounded-md shadow-sm">
+                    <mat-form-field>
+                        <mat-label>Choose Date</mat-label>
+                        <input matInput [matDatepicker]="dp4" type="text"
+                            class="ti-form-input rounded-l-none focus:z-10 flatpickr-input" id="blog-date">
+                        <mat-datepicker-toggle matSuffix [for]="dp4"></mat-datepicker-toggle>
+                        <mat-datepicker #dp4></mat-datepicker>
+                    </mat-form-field>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::row-1 -->
+
+<!-- Start::row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="col-span-12 lg:col-span-6 xl:col-span-6 xxl:col-span-3">
+        <div class="box timepicker">
+            <div class="box-header">
+                <h5 class="box-title">Basic Time Picker</h5>
+            </div>
+            <div class="box-body">
+                <div class="flex rounded-md shadow-sm">
+                    <div
+                        class="px-4 inline-flex items-center min-w-fit ltr:rounded-l-md rtl:rounded-r-md border ltr:border-r-0 rtl:border-l-0 border-gray-200 bg-gray-50 dark:bg-black/20 dark:border-white/10">
+                        <span class="text-sm text-gray-500 dark:text-white/70"><i class="ri ri-time-line"></i></span>
+                    </div>
+                    <mat-form-field appearance="fill" class="rounded-l-none">
+                        <mat-label>TIMEPICKER</mat-label>
+                        <input type="text" class="ti-form-input rounded-l-none focus:z-10 flatpickr-input"
+                            id="timepikcr" matInput [ngxMatTimepicker]="picker1" />
+                        <ngx-mat-timepicker #picker1></ngx-mat-timepicker>
+                    </mat-form-field>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-12 lg:col-span-6 xl:col-span-6 xxl:col-span-3">
+        <div class="box timepicker">
+            <div class="box-header">
+                <h5 class="box-title"> Time Picker with 24hr Format </h5>
+            </div>
+            <div class="box-body">
+                <div class="flex rounded-md shadow-sm">
+                    <div
+                        class="px-4 inline-flex items-center min-w-fit ltr:rounded-l-md rtl:rounded-r-md border ltr:border-r-0 rtl:border-l-0 border-gray-200 bg-gray-50 dark:bg-black/20 dark:border-white/10">
+                        <span class="text-sm text-gray-500 dark:text-white/70"><i class="ri ri-time-line"></i></span>
+                    </div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>TIMEPICKER</mat-label>
+                        <input type="text" class="ti-form-input rounded-l-none focus:z-10 flatpickr-input"
+                            id="timepikcr1" matInput [ngxMatTimepicker]="picker2" />
+                        <ngx-mat-timepicker #picker2></ngx-mat-timepicker>
+                    </mat-form-field>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-12 lg:col-span-6 xl:col-span-6 xxl:col-span-3">
+        <div class="box timepicker">
+            <div class="box-header">
+                <h5 class="box-title"> Time Picker with Limits </h5>
+            </div>
+            <div class="box-body">
+                <div class="flex rounded-md shadow-sm">
+                    <div
+                        class="px-4 inline-flex items-center min-w-fit ltr:rounded-l-md rtl:rounded-r-md border ltr:border-r-0 rtl:border-l-0 border-gray-200 bg-gray-50 dark:bg-black/20 dark:border-white/10">
+                        <span class="text-sm text-gray-500 dark:text-white/70"><i class="ri ri-time-line"></i></span>
+                    </div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>TIMEPICKER</mat-label>
+                        <input type="text" class="ti-form-input rounded-l-none focus:z-10 flatpickr-input"
+                            id="limittime" matInput [ngxMatTimepicker]="picker3" />
+                        <ngx-mat-timepicker #picker3></ngx-mat-timepicker>
+                    </mat-form-field>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-12 lg:col-span-6 xl:col-span-6 xxl:col-span-3">
+        <div class="box timepicker">
+            <div class="box-header">
+                <h5 class="box-title"> DateTimePicker with Limited Time Range </h5>
+            </div>
+            <div class="box-body">
+                <div class="flex rounded-md shadow-sm">
+                    <div
+                        class="px-4 inline-flex items-center min-w-fit ltr:rounded-l-md rtl:rounded-r-md border ltr:border-r-0 rtl:border-l-0 border-gray-200 bg-gray-50 dark:bg-black/20 dark:border-white/10">
+                        <span class="text-sm text-gray-500 dark:text-white/70"><i class="ri ri-time-line"></i></span>
+                    </div>
+                    <mat-form-field>
+                        <mat-label>Choose Date</mat-label>
+                        <input matInput [matDatepicker]="dp5" type="text"
+                            class="ti-form-input rounded-l-none focus:z-10 flatpickr-input" id="datetime">
+                        <mat-datepicker-toggle matSuffix [for]="dp5"></mat-datepicker-toggle>
+                        <mat-datepicker #dp5></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::row-2 -->
+
+<!-- Start::row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="col-span-12 lg:col-span-6 xl:col-span-4Related Files">
+        <div class="box">
+            <div class="box-header">
+                <h5 class="box-title"> Inline Time Picker </h5>
+            </div>
+            <div class="box-body">
+                <div class=" rounded-md shadow-sm">
+                    <input type="text" name="daterange" id="inlinetime" placeholder="Choose date" ngxDaterangepickerMd
+                        [(ngModel)]="selected" class="form-control ti-form-input focus:z-10 flatpickr-input" readonly />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-12 lg:col-span-6 xl:col-span-4Related Files">
+        <div class="box timepicker">
+            <div class="box-header">
+                <h5 class="box-title"> Date Picker with week numbers </h5>
+            </div>
+            <div class="box-body">
+                <div class="flex rounded-md shadow-sm">
+                    <div
+                        class="px-4 inline-flex items-center min-w-fit ltr:rounded-l-md rtl:rounded-r-md border ltr:border-r-0 rtl:border-l-0 border-gray-200 bg-gray-50 dark:bg-black/20 dark:border-white/10">
+                        <span class="text-sm text-gray-500 dark:text-white/70"><i
+                                class="ri ri-calendar-line"></i></span>
+                    </div>
+                    <mat-form-field>
+                        <mat-label>Choose Date</mat-label>
+                        <input matInput [matDatepicker]="dp6" type="text"
+                            class="ti-form-input rounded-l-none focus:z-10 flatpickr-input" id="datetime">
+                        <mat-datepicker-toggle matSuffix [for]="dp6"></mat-datepicker-toggle>
+                        <mat-datepicker #dp6></mat-datepicker>
+                    </mat-form-field>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-12 lg:col-span-6 xl:col-span-4Related Files">
+        <div class="box preload-time">
+            <div class="box-header">
+                <h5 class="box-title"> Preloading time </h5>
+            </div>
+            <div class="box-body">
+                <div class="flex rounded-md shadow-sm">
+                    <div
+                        class="px-4 inline-flex items-center min-w-fit ltr:rounded-l-md rtl:rounded-r-md border ltr:border-r-0 rtl:border-l-0 border-gray-200 bg-gray-50 dark:bg-black/20 dark:border-white/10">
+                        <span class="text-sm text-gray-500 dark:text-white/70"><i class="ri ri-time-line"></i></span>
+                    </div>
+
+                    <input type="text" name="daterange" id="inlinetime" placeholder="Choose date" ngxDaterangepickerMd
+                        [(ngModel)]="selected" class="ti-form-input rounded-l-none focus:z-10 flatpickr-input"
+                        readonly />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-12 lg:col-span-6 xl:col-span-4Related Files">
+        <div class="box">
+            <div class="box-header">
+                <h5 class="box-title">Inline Calendar </h5>
+            </div>
+            <div class="box-body sm:overflow-hidden overflow-auto">
+                <div class="rounded-md">
+                    <mat-form-field>
+                        <mat-label>Choose Date</mat-label>
+                        <input matInput [matDatepicker]="dp7" type="text"
+                            class="ti-form-input rounded-l-none focus:z-10 flatpickr-input" id="datetime">
+                        <mat-datepicker-toggle matSuffix [for]="dp7"></mat-datepicker-toggle>
+                        <mat-datepicker #dp7></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::row-3 -->
+
+<!-- Start::row-4 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="col-span-12 lg:col-span-6 xl:col-span-4Related Files">
+        <div class="box">
+            <div class="box-header">
+                <h5 class="box-title"> Color Picker </h5>
+            </div>
+            <div class="box-body">
+                <div class="">
+                    <div class="flex justify-between flex-wrap gap-y-4">
+                        <div>
+                            <form class="example-form2" [formGroup]="exampleForm">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Color</mat-label>
+                                    <input matInput formControlName="inputCtrl" />
+                                    <ngx-colors class="suffix" matSuffix ngx-colors-trigger
+                                        formControlName="pickerCtrl"></ngx-colors>
+                                    <mat-error *ngIf="this.exampleForm.controls['inputCtrl'].hasError('invalidColor')">
+                                        The color is invalid.
+                                    </mat-error>
+                                </mat-form-field>
+                            </form>
+                        </div>
+                        <div>
+                            <div class="theme-container1"></div>
+                            <div class="pickr-container1 text-center">
+                                <input ejs-colorpicker type="color" class="form-control" id="element" mode="Palette"
+                                    [(ngModel)]="color1" />
+                            </div>
+                        </div>
+                        <div>
+                            <div class="theme-container2"></div>
+                            <div class="pickr-container2 text-center">
+                                <ngx-colors ngx-colors-trigger [(ngModel)]="color11"></ngx-colors>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::row-4 -->

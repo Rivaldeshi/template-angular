@@ -1,0 +1,63 @@
+<app-page-header
+  [title]="'Draggable Cards'"
+  [title1]="'Draggable cards'"
+  [activeitem]="'Advanced UI'"
+></app-page-header>
+<div cdkDropListGroup class="grid grid-cols-12 gap-6">
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-body">
+        <div class="gap-4 grid" id="drag-left">
+          <div
+            class="mb-0"
+            cdkDropList
+            [cdkDropListData]="col1"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="mb-4" *ngFor="let item of col1" cdkDrag>
+              <span [innerHTML]="getSanitizedSVG(item)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-body">
+        <div class="gap-4 grid" id="drag-center">
+          <div
+            class="mb-0 text-dark"
+            cdkDropList
+            [cdkDropListData]="col2"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="mb-4" *ngFor="let item of col2" cdkDrag>
+              <span [innerHTML]="getSanitizedSVG(item)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-4">
+    <div class="box">
+      <div class="box-body">
+        <div class="gap-4 grid" id="drag-right">
+          <div
+            class="text-white mb-0"
+            cdkDropList
+            [cdkDropListData]="col3"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="mb-4" *ngFor="let item of col3" cdkDrag>
+              <span [innerHTML]="getSanitizedSVG(item)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End::row-1 -->

@@ -1,0 +1,16 @@
+::ng-deep{
+.dark{
+    ngx-dropzone {
+            background-color: #1e293b !important;
+        }
+}
+
+.circlefile{
+    border-radius: 100px !important;
+}
+.preview {
+    border-radius: 85px !important;
+    border: 1px solid #bbbbbb52 !important;
+    background: var(--dark-bg) !important;
+}
+}

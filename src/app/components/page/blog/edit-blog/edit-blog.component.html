@@ -1,0 +1,446 @@
+<app-page-header
+  title="Edit Blog"
+  title1="Edit Blog"
+  activeitem="Pages"
+></app-page-header>
+
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="col-span-12 xxl:col-span-9">
+    <div class="box">
+      <div class="box-body space-y-5">
+        <div>
+          <label for="input-label1" class="ti-form-label">Blog Title</label>
+          <input
+            type="text"
+            id="input-label1"
+            class="ti-form-input"
+            placeholder="blogtitle"
+            value="Myths about Investment"
+          />
+        </div>
+        <div>
+          <label class="ti-form-select-label">Categories</label>
+          <ng-select [multiple]="true" [(ngModel)]="selectedCategory">
+            <ng-option
+              *ngFor="let category of categories"
+              [value]="category.id"
+              >{{ category.name }}</ng-option
+            >
+            <ng-option [value]="'custom'">Custom</ng-option>
+          </ng-select>
+        </div>
+        <div>
+          <label for="input-label" class="ti-form-label">Content</label>
+          <div class="ql-wrapper ql-wrapper-modal ht-250">
+            <div class="flex-1" id="blog-edit">
+              <br />
+              <form [formGroup]="form">
+                <ngx-editor-menu
+                  class="border-1"
+                  [editor]="editor"
+                  [toolbar]="toolbar"
+                >
+                </ngx-editor-menu>
+                <ngx-editor [editor]="editor" formControlName="editorContent">
+                </ngx-editor>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="input-label" class="ti-form-label">Upload</label>
+          <ngx-dropzone (change)="onSelect($event)">
+            <ngx-dropzone-label>Drop Files here to upload</ngx-dropzone-label>
+            <ngx-dropzone-preview
+              *ngFor="let f of files"
+              [removable]="true"
+              (removed)="onRemove(f)"
+            >
+              <ngx-dropzone-label
+                >{{ f.name }} ({{ f.type }})</ngx-dropzone-label
+              >
+            </ngx-dropzone-preview>
+          </ngx-dropzone>
+        </div>
+        <div class="sm:grid grid-cols-12 sm:gap-6 space-y-5 sm:space-y-0">
+          <div class="col-span-12 lg:col-span-6">
+            <label for="input-label2" class="ti-form-label">Blog Author</label>
+            <input
+              type="text"
+              id="input-label2"
+              class="ti-form-input"
+              placeholder="Enter Name"
+            />
+          </div>
+          <div class="col-span-12 lg:col-span-6">
+            <label for="input-label3" class="ti-form-label">Author Email</label>
+            <input
+              type="email"
+              id="input-label3"
+              class="ti-form-input"
+              placeholder="Enter Email"
+            />
+          </div>
+          <div class="col-span-12">
+            <label class="ti-form-select-label">Tags</label>
+            <ng-select [multiple]="true" [(ngModel)]="selectedCategory1">
+              <ng-option
+                *ngFor="let category of categories1"
+                [value]="category.id"
+                >{{ category.name }}</ng-option
+              >
+              <ng-option [value]="'custom'">Custom</ng-option>
+            </ng-select>
+          </div>
+          <div class="col-span-12 xl:col-span-4 blog-published-date">
+            <label for="input-label" class="ti-form-label"
+              >Blog Published Date</label
+            >
+            <div
+              class="inline-flex border-0 w-full items-center min-w-fit ltr:rounded-l-sm rtl:rounded-r-sm ltr:border-r-0 rtl:border-l-0 border-gray-200 bg-gray-50 dark:bg-black/20 dark:border-white/10"
+            >
+              <mat-form-field>
+                <mat-label>Choose Date</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="dp1"
+                  type="text"
+                  class="ti-form-input ltr:rounded-l-none rtl:rounded-r-none focus:z-10 flatpickr-input p-0"
+                  id="blog-date"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="dp1"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #dp1></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-span-12 xl:col-span-4">
+            <label for="input-label" class="ti-form-label"
+              >Blog Published Time</label
+            >
+            <div class="flex rounded-sm shadow-sm timepicker">
+              <div
+                class="px-4 inline-flex items-center min-w-fit ltr:rounded-l-sm rtl:rounded-r-sm border ltr:border-r-0 rtl:border-l-0 border-gray-200 bg-gray-50 dark:bg-black/20 dark:border-white/10"
+              >
+                <span class="text-sm text-gray-500 dark:text-white/70"
+                  ><i class="ri ri-time-line"></i
+                ></span>
+              </div>
+              <mat-form-field appearance="fill">
+                <mat-label>TIMEPICKER</mat-label>
+                <input
+                  type="text"
+                  class="ti-form-input ltr:rounded-l-none rtl:rounded-r-none focus:z-10 flatpickr-input"
+                  id="blog-time"
+                  matInput
+                  [ngxMatTimepicker]="picker"
+                />
+                <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-span-12 xl:col-span-4 publish-status">
+            <label class="ti-form-select-label">Publish Status</label>
+            <ng-select
+              class="ti-form-select blog-tag3"
+              data-trigger
+              placeholder="select"
+            >
+              <ng-option value="Choice 1">On-Hold</ng-option>
+              <ng-option value="Choice 2">Published</ng-option>
+              <ng-option value="Choice 3" selected>UnPublished</ng-option>
+              <ng-option value="Choice 4">Discarded</ng-option>
+            </ng-select>
+          </div>
+        </div>
+      </div>
+      <div class="box-footer bg-transparent">
+        <div class="flex items-center justify-between">
+          <button type="button" class="py-2 px-3 ti-btn ti-btn-secondary">
+            Save To Draft
+          </button>
+          <button type="button" class="py-2 px-3 ti-btn ti-btn-primary">
+            Publish Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 xxl:col-span-3">
+    <div class="box">
+      <div class="box-body p-0">
+        <div class="swiper mySwiper8">
+          <div class="swiper-wrapper">
+            <swiper
+              [slidesPerView]="1"
+              (swiper)="setThumbsSwiper($event)"
+              [zoom]="true"
+              [autoplay]="true"
+              [navigation]="false"
+              [watchSlidesProgress]="true"
+            >
+              <ng-template
+                swiperSlide
+                *ngFor="let image of imageData; let i = index"
+              >
+                <div class="swiper-slide">
+                  <div class="rtl:dir-rtl">
+                    <img src="{{ image.src }}" alt="image" />
+                    <div class="blog-caption text-start">
+                      <p class="mb-2 text-xs">{{ image.text }}</p>
+                      <h6 class="text-base font-semibold mb-2">
+                        {{ image.text2 }}
+                      </h6>
+                      <div class="flex items-center">
+                        <img
+                          src="./assets/img/users/15.jpg"
+                          alt=""
+                          class="shadow-none ring-transparent avatar avatar-sm !rounded-full ltr:mr-2 rtl:ml-2"
+                        />
+                        <div class="font-semibold">
+                          {{ image.name }}
+                          <span class="text-xs opacity-70 font-normal"
+                            >{{ image.date }}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Recent Blogs</h5>
+      </div>
+      <div class="box-body">
+        <ul class="flex flex-col">
+          <li
+            class="ti-list-group pt-0 px-0 border-0 text-gray-800 dark:text-white"
+          >
+            <div class="space-x-3 flex w-full rtl:space-x-reverse">
+              <img
+                src="./assets/img/gallery/7.jpg"
+                class="avatar avatar-lg rounded-sm ring-0"
+                alt="Image Description"
+              />
+              <div class="flex justify-between w-full">
+                <div class="space-y-1 my-auto">
+                  <h3 class="font-semibold text-sm">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </h3>
+                  <p
+                    class="flex space-x-2 rtl:space-x-reverse text-gray-500 dark:text-white/70 text-xs"
+                  >
+                    <i class="ri ri-calendar-line text-xs"></i
+                    ><span>Sept 29 , 2022</span>
+                  </p>
+                </div>
+                <div class="my-auto ltr:ml-auto rtl:mr-auto hidden sm:block">
+                  <button
+                    type="button"
+                    aria-label="button"
+                    class="m-0 p-2 ti-btn bg-gray-100 text-gray-500 hover:text-white hover:bg-gray-500 ring-offset-white focus:ring-gray-500 dark:bg-black/20 dark:hover:bg-black/30 dark:focus:ring-gray-600 dark:text-white dark:focus:ring-offset-white/10"
+                  >
+                    <i class="leading-none ri-arrow-right-s-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ti-list-group px-0 border-0 text-gray-800 dark:text-white">
+            <div class="space-x-3 flex w-full rtl:space-x-reverse">
+              <img
+                src="./assets/img/gallery/9.jpg"
+                class="avatar avatar-lg rounded-sm ring-0"
+                alt="Image Description"
+              />
+              <div class="flex justify-between w-full">
+                <div class="space-y-1 my-auto">
+                  <h3 class="font-semibold text-sm">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </h3>
+                  <p
+                    class="flex space-x-2 rtl:space-x-reverse text-gray-500 dark:text-white/70 text-xs"
+                  >
+                    <i class="ri ri-time-line text-xs"></i
+                    ><span>3 hours ago</span>
+                  </p>
+                </div>
+                <div class="my-auto ltr:ml-auto rtl:mr-auto hidden sm:block">
+                  <button
+                    type="button"
+                    aria-label="button"
+                    class="m-0 p-2 ti-btn bg-gray-100 text-gray-500 hover:text-white hover:bg-gray-500 ring-offset-white focus:ring-gray-500 dark:bg-black/20 dark:hover:bg-black/30 dark:focus:ring-gray-600 dark:text-white dark:focus:ring-offset-white/10"
+                  >
+                    <i class="leading-none ri-arrow-right-s-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ti-list-group px-0 border-0 text-gray-800 dark:text-white">
+            <div class="space-x-3 flex w-full rtl:space-x-reverse">
+              <img
+                src="./assets/img/gallery/8.jpg"
+                class="avatar avatar-lg rounded-sm ring-0"
+                alt="Image Description"
+              />
+              <div class="flex justify-between w-full">
+                <div class="space-y-1 my-auto">
+                  <h3 class="font-semibold text-sm">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </h3>
+                  <p
+                    class="flex space-x-2 rtl:space-x-reverse text-gray-500 dark:text-white/70 text-xs"
+                  >
+                    <i class="ri ri-time-line text-xs"></i
+                    ><span>30 mins ago</span>
+                  </p>
+                </div>
+                <div class="my-auto ltr:ml-auto rtl:mr-auto hidden sm:block">
+                  <button
+                    type="button"
+                    aria-label="button"
+                    class="m-0 p-2 ti-btn bg-gray-100 text-gray-500 hover:text-white hover:bg-gray-500 ring-offset-white focus:ring-gray-500 dark:bg-black/20 dark:hover:bg-black/30 dark:focus:ring-gray-600 dark:text-white dark:focus:ring-offset-white/10"
+                  >
+                    <i class="leading-none ri-arrow-right-s-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ti-list-group px-0 border-0 text-gray-800 dark:text-white">
+            <div class="space-x-3 flex w-full rtl:space-x-reverse">
+              <img
+                src="./assets/img/gallery/3.jpg"
+                class="avatar avatar-lg rounded-sm ring-0"
+                alt="Image Description"
+              />
+              <div class="flex justify-between w-full">
+                <div class="space-y-1 my-auto">
+                  <h3 class="font-semibold text-sm">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </h3>
+                  <p
+                    class="flex space-x-2 rtl:space-x-reverse text-gray-500 dark:text-white/70 text-xs"
+                  >
+                    <i class="ri ri-calendar-line text-xs"></i
+                    ><span>l day ago</span>
+                  </p>
+                </div>
+                <div class="my-auto ltr:ml-auto rtl:mr-auto hidden sm:block">
+                  <button
+                    type="button"
+                    aria-label="button"
+                    class="m-0 p-2 ti-btn bg-gray-100 text-gray-500 hover:text-white hover:bg-gray-500 ring-offset-white focus:ring-gray-500 dark:bg-black/20 dark:hover:bg-black/30 dark:focus:ring-gray-600 dark:text-white dark:focus:ring-offset-white/10"
+                  >
+                    <i class="leading-none ri-arrow-right-s-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ti-list-group px-0 border-0 text-gray-800 dark:text-white">
+            <div class="space-x-3 flex w-full rtl:space-x-reverse">
+              <img
+                src="./assets/img/gallery/2.jpg"
+                class="avatar avatar-lg rounded-sm ring-0"
+                alt="Image Description"
+              />
+              <div class="flex justify-between w-full">
+                <div class="space-y-1 my-auto">
+                  <h3 class="font-semibold text-sm">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </h3>
+                  <p
+                    class="flex space-x-2 rtl:space-x-reverse text-gray-500 dark:text-white/70 text-xs"
+                  >
+                    <i class="ri ri-calendar-line text-xs"></i
+                    ><span>l day ago</span>
+                  </p>
+                </div>
+                <div class="my-auto ltr:ml-auto rtl:mr-auto hidden sm:block">
+                  <button
+                    type="button"
+                    aria-label="button"
+                    class="m-0 p-2 ti-btn bg-gray-100 text-gray-500 hover:text-white hover:bg-gray-500 ring-offset-white focus:ring-gray-500 dark:bg-black/20 dark:hover:bg-black/30 dark:focus:ring-gray-600 dark:text-white dark:focus:ring-offset-white/10"
+                  >
+                    <i class="leading-none ri-arrow-right-s-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class="ti-list-group px-0 pb-0 border-0 text-gray-800 dark:text-white"
+          >
+            <div class="space-x-3 flex w-full rtl:space-x-reverse">
+              <img
+                src="./assets/img/gallery/8.jpg"
+                class="avatar avatar-lg rounded-sm ring-0"
+                alt="Image Description"
+              />
+              <div class="flex justify-between w-full">
+                <div class="space-y-1 my-auto">
+                  <h3 class="font-semibold text-sm">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </h3>
+                  <p
+                    class="flex space-x-2 rtl:space-x-reverse text-gray-500 dark:text-white/70 text-xs"
+                  >
+                    <i class="ri ri-time-line text-xs"></i
+                    ><span>30 mins ago</span>
+                  </p>
+                </div>
+                <div class="my-auto ltr:ml-auto rtl:mr-auto hidden sm:block">
+                  <button
+                    type="button"
+                    aria-label="button"
+                    class="m-0 p-2 ti-btn bg-gray-100 text-gray-500 hover:text-white hover:bg-gray-500 ring-offset-white focus:ring-gray-500 dark:bg-black/20 dark:hover:bg-black/30 dark:focus:ring-gray-600 dark:text-white dark:focus:ring-offset-white/10"
+                  >
+                    <i class="leading-none ri-arrow-right-s-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="box-footer text-center">
+        <button type="button" class="py-1 px-3 ti-btn ti-btn-primary">
+          View More
+        </button>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-body">
+        <h3 class="font-semibold text-base text-primary mb-2">
+          Subscribe For More Blog's
+        </h3>
+        <input
+          type="email"
+          id="input-label"
+          class="ti-form-input"
+          placeholder="you@site.com"
+        />
+        <button
+          type="button"
+          class="py-2 px-3 w-full ti-btn ti-btn-primary mt-2"
+        >
+          subscribe
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-1 -->

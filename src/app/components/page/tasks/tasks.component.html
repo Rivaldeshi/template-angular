@@ -1,0 +1,337 @@
+<app-page-header
+  title="Tasks"
+  title1="Tasks"
+  activeitem="Pages"
+></app-page-header>
+
+<!-- Start::row-1 -->
+<div class="box add-new-tasks">
+  <div class="box-body">
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 xl:col-span-4">
+        <div
+          class="sm:flex sm:space-x-3 sm:space-y-0 space-y-2 task-left rtl:space-x-reverse"
+        >
+          <a
+            href="javascript:void(0);"
+            class="hs-dropdown-toggle py-2 px-3 ti-btn ti-btn-primary m-0 whitespace-nowrap"
+            data-hs-overlay="#task-compose"
+          >
+            <i class="ri ri-edit-line"></i> Add New Task
+          </a>
+          <div class="relative sm:max-w-xs max-w-[210px]">
+            <label for="hs-table-search" class="sr-only">Search</label>
+            <div
+              class="absolute inset-y-0 ltr:right-0 rtl:left-0 flex items-center pointer-events-none ltr:pr-4 rtl:pl-4"
+            >
+              <i class="ti ti-search"></i>
+            </div>
+            <input
+              type="text"
+              name="hs-table-search"
+              id="hs-table-search"
+              class="p-2 ltr:pr-10 rtl:pl-10 ti-form-input"
+              placeholder="Search Boards"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 xl:col-span-8">
+        <div
+          class="sm:flex sm:space-x-3 sm:space-y-0 space-y-2 xl:justify-end task-right rtl:space-x-reverse"
+        >
+          <ng-select placeholder="Sort By" class="ti-form-select task-choice">
+            <ng-option value="">Sort By</ng-option>
+            <ng-option value="1">A To Z</ng-option>
+            <ng-option value="2">Z To A</ng-option>
+            <ng-option value="3">Favorites</ng-option>
+            <ng-option value="4">All</ng-option>
+          </ng-select>
+          <ng-select placeholder="Status" class="ti-form-select task-choice">
+            <ng-option value="">Status</ng-option>
+            <ng-option value="1">Pending</ng-option>
+            <ng-option value="2">Completed</ng-option>
+            <ng-option value="3">Inprogress</ng-option>
+            <ng-option value="4">New</ng-option>
+          </ng-select>
+          <div class="hs-dropdown ti-dropdown">
+            <a
+              aria-label="anchor"
+              href="javascript:void(0);"
+              class="hs-dropdown-toggle ti-dropdown-toggle inline-flex !p-2 flex-shrink-0 justify-center items-center gap-2 w-full rounded-sm border font-medium bg-white text-gray-500 shadow-sm align-middle focus:outline-none focus:ring-0 focus:ring-offset-0 focus:ring-offset-white focus:ring-primary transition-all text-xs dark:bg-bgdark dark:border-white/10 dark:text-white/70 dark:focus:ring-offset-white/10"
+            >
+              <i class="ri ri-more-2-line text-lg leading-none"></i>
+            </a>
+            <div class="hs-dropdown-menu ti-dropdown-menu">
+              <a class="ti-dropdown-item" href="javascript:void(0);"
+                >Select All</a
+              >
+              <a class="ti-dropdown-item" href="javascript:void(0);"
+                >Mark All</a
+              >
+              <a class="ti-dropdown-item" href="javascript:void(0);"
+                >Delete All</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-1 -->
+
+<!-- Start::row-2 -->
+<div cdkDropListGroup class="grid grid-cols-12 gap-6">
+  <div class="col-span-12 lg:col-span-6 xxxl:!col-span-3">
+    <div class="box border-t-[5px] border-t-danger dark:border-t-danger">
+      <div class="box-header">
+        <h5 class="font-semibold text-xl text-danger text-center">
+          New Project
+          <span class="font-normal text-xs text-gray-500 dark:text-white/70"
+            >(03)</span
+          >
+        </h5>
+      </div>
+      <div class="box-body overflow-auto">
+        <div class="gap-4 grid" id="task-left">
+          <div
+            class="mb-0"
+            cdkDropList
+            [cdkDropListData]="col1"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="mb-2" *ngFor="let item of col1" cdkDrag>
+              <span [innerHTML]="getSanitizedSVG(item)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-footer flex justify-center">
+        <a
+          href="javascript:void(0);"
+          data-hs-overlay="#task-compose"
+          class="w-full p-2 ti-btn ti-btn-soft-primary"
+          ><i class="ri-add-circle-line"></i>Add New Task</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-6 xxxl:!col-span-3">
+    <div class="box border-t-[5px] border-t-info dark:border-t-info">
+      <div class="box-header">
+        <h5 class="font-semibold text-xl text-info text-center">
+          Inprogress
+          <span class="font-normal text-xs text-gray-500 dark:text-white/70"
+            >(04)</span
+          >
+        </h5>
+      </div>
+      <div class="box-body overflow-auto">
+        <div class="gap-4 grid" id="task-left1">
+          <div
+            class="mb-0 text-dark"
+            cdkDropList
+            [cdkDropListData]="col2"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="mb-4" *ngFor="let item of col2" cdkDrag>
+              <span [innerHTML]="getSanitizedSVG(item)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-footer flex justify-center">
+        <a
+          href="javascript:void(0);"
+          data-hs-overlay="#task-compose"
+          class="w-full p-2 ti-btn ti-btn-soft-primary"
+          ><i class="ri-add-circle-line"></i>Add New Task</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-6 xxxl:!col-span-3">
+    <div class="box border-t-[5px] border-t-warning dark:border-t-warning">
+      <div class="box-header">
+        <h5 class="font-semibold text-xl text-warning text-center">
+          Pending
+          <span class="font-normal text-xs text-gray-500 dark:text-white/70"
+            >(02)</span
+          >
+        </h5>
+      </div>
+      <div class="box-body overflow-auto">
+        <div class="gap-4 grid" id="task-right">
+          <div
+            class="mb-0 text-dark"
+            cdkDropList
+            [cdkDropListData]="col3"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="mb-4" *ngFor="let item of col3" cdkDrag>
+              <span [innerHTML]="getSanitizedSVG(item)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-footer flex justify-center">
+        <a
+          href="javascript:void(0);"
+          data-hs-overlay="#task-compose"
+          class="w-full p-2 ti-btn ti-btn-soft-primary"
+          ><i class="ri-add-circle-line"></i>Add New Task</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="col-span-12 lg:col-span-6 xxxl:!col-span-3">
+    <div class="box border-t-[5px] border-t-success dark:border-t-success">
+      <div class="box-header">
+        <h5 class="font-semibold text-xl text-success text-center">
+          Completed
+          <span class="font-normal text-xs text-gray-500 dark:text-white/70"
+            >(01)</span
+          >
+        </h5>
+      </div>
+      <div class="box-body overflow-auto">
+        <div class="gap-4 grid" id="task-right1">
+          <div
+            class="mb-0 text-dark"
+            cdkDropList
+            [cdkDropListData]="col4"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="mb-4" *ngFor="let item of col4" cdkDrag>
+              <span [innerHTML]="getSanitizedSVG(item)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-footer flex justify-center">
+        <a
+          href="javascript:void(0);"
+          data-hs-overlay="#task-compose"
+          class="w-full p-2 ti-btn ti-btn-soft-primary"
+          ><i class="ri-add-circle-line"></i>Add New Task</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End::row-2 -->
+
+<!--Start::Modal-->
+<div id="task-compose" class="hs-overlay hidden ti-modal">
+  <div class="hs-overlay-open:mt-7 ti-modal-box mt-0 ease-out">
+    <div class="ti-modal-content">
+      <div class="ti-modal-header">
+        <h3 class="ti-modal-title">New Task</h3>
+        <button
+          type="button"
+          class="hs-dropdown-toggle ti-modal-close-btn"
+          data-hs-overlay="#task-compose"
+        >
+          <span class="sr-only">Close</span>
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+      <div class="ti-modal-body">
+        <div class="space-y-3">
+          <div class="">
+            <label for="input-label" class="ti-form-label">Task Title</label>
+            <input
+              type="text"
+              id="input-label"
+              class="ti-form-input"
+              placeholder="Task title"
+            />
+          </div>
+          <div>
+            <label class="ti-form-label">Assigned To</label>
+            <ng-select
+              [items]="choices"
+              [multiple]="true"
+              [closeOnSelect]="false"
+              [hideSelected]="true"
+              bindLabel="name"
+              placeholder="Select people"
+              [(ngModel)]="ChoicesList1"
+            >
+            </ng-select>
+          </div>
+          <div>
+            <label for="input-label" class="ti-form-label">Assigned Date</label>
+            <div class="flex rounded-sm shadow-sm">
+              <mat-form-field>
+                <mat-label>Choose Date</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="dp7"
+                  type="text"
+                  class="ti-form-input ltr:rounded-l-none rtl:rounded-r-none focus:z-10 flatpickr-input"
+                  placeholder="Choose date and time"
+                  readonly
+                  id="datetime"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="dp7"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #dp7></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div>
+            <label for="input-label" class="ti-form-label">Due Date</label>
+            <div class="flex rounded-sm shadow-sm">
+              <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  class="ti-form-input ltr:rounded-l-none rtl:rounded-r-none focus:z-10 flatpickr-input"
+                />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle
+                  matIconSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker
+                  #picker
+                  startView="year"
+                  [startAt]="startDate"
+                ></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div>
+            <label class="ti-form-label">Assigned To</label>
+            <ng-select
+              class="ti-form-select task-choice"
+              name="choices-single-default"
+            >
+              <ng-option value="">Select</ng-option>
+              <ng-option value="Critical">Critical</ng-option>
+              <ng-option value="High">High</ng-option>
+              <ng-option value="Medium">Medium</ng-option>
+              <ng-option value="Low">Low</ng-option>
+            </ng-select>
+          </div>
+        </div>
+      </div>
+      <div class="ti-modal-footer">
+        <button
+          type="button"
+          class="hs-dropdown-toggle ti-btn ti-border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:ring-offset-white focus:ring-primary dark:bg-bgdark dark:hover:bg-black/20 dark:border-white/10 dark:text-white/70 dark:hover:text-white dark:focus:ring-offset-white/10"
+          data-hs-overlay="#task-compose"
+        >
+          Close
+        </button>
+        <a class="ti-btn ti-btn-primary" href="javascript:void(0);"> Create </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End::Modal-->

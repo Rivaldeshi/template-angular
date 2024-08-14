@@ -1,0 +1,72 @@
+<app-page-header [title]="'Data Tables'" [title1]="'Data Tables'" [activeitem]="'Basic Ui'"></app-page-header>
+
+    <!-- Start::row-1 -->
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">Basic DataTable</h5>
+          </div>
+          <div class="box-body">
+            <div class="overflow-auto table-bordered">
+              <div id="basic-table" class="ti-custom-table ti-striped-table ti-custom-table-hover">
+                <app-basic-angular-table></app-basic-angular-table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End::row-1 -->
+
+    <!-- Start::row-2 -->
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">Sortable DataTable</h5>
+          </div>
+          <div class="box-body table-responsive">
+            <div class="overflow-auto table-bordered">
+                <app-sortable-data class="sortable-table"></app-sortable-data>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End::row-2 -->
+
+    <!-- Start::row-3 -->
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">Adding and removing DataTable</h5>
+          </div>
+          <div class="box-body table-responsive">
+            <div class="overflow-auto table-bordered">
+              <app-add-remove-data></app-add-remove-data>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End::row-3 -->
+    
+    <!-- Start::row-3 -->
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">Selection DataTable</h5>
+          </div>
+          <div class="box-body able-responsive">
+            <div class="overflow-auto table-bordered">
+           <app-selection-datatable class="selection-datatable" ></app-selection-datatable>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End::row-3 -->
+ 

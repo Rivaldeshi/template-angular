@@ -1,0 +1,60 @@
+<app-page-header
+  [title]="'Gallery'"
+  [title1]="'Gallery'"
+  [activeitem]="'Advanced UI'"
+></app-page-header>
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-6">
+  <div class="col-span-12">
+    <div class="box">
+      <div class="box-header">
+        <h5 class="box-title">Basic Gallery</h5>
+      </div>
+      <div class="box-body">
+        <div class="sm:grid grid-cols-3 gap-6 sm:space-y-0 space-y-6">
+          <div class="col-span-12">
+            <div class="inner">
+              <div class="gallerize-example gallery2 inner">
+                <ks-plain-gallery
+                  [id]="200"
+                  [images]="imagesRect"
+                  [config]="libConfigPlainGalleryRow"
+                  (clickImage)="onShow(200, $event)"
+                ></ks-plain-gallery>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End::row-1 -->
+
+    <!-- Start::row-2 -->
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12">
+        <div class="box">
+          <div class="box-header">
+            <h5 class="box-title">Image With Description</h5>
+          </div>
+          <div class="box-body">
+            <div class="sm:grid grid-cols-12 gap-6 sm:space-y-0 space-y-6">
+              <div class="col-span-12">
+                <div class="inner gallery">
+                  <div class="my-app-custom-plain-container-with-desc gallery3">
+                    <ks-plain-gallery
+                      [id]="200"
+                      [images]="imagesRect2"
+                      [config]="libConfigPlainGalleryRow"
+                      (clickImage)="onShow2(200, $event)"
+                    ></ks-plain-gallery>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End::row-2 -->
+  </div>
+</div>

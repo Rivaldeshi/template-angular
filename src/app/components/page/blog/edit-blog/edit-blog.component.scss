@@ -1,0 +1,85 @@
+::ng-deep {
+  .quill-editor {
+    display: inherit !important;
+  }
+
+  .NgxEditor__Content {
+    height: 15rem;
+  }
+
+  .NgxEditor {
+    border: 1px solid rgba(163, 163, 163, 0.2784313725) !important;
+    border-top-left-radius: inherit !important;
+    border-top-right-radius: inherit !important;
+    border-top: 0px solid #fff !important;
+    height: 200px !important;
+  }
+    
+  .NgxEditor__MenuBar {
+    border: 1px solid #a3a3a347;
+    border-radius: 5px;
+        border-bottom-left-radius: inherit;
+          border-bottom-right-radius: inherit;
+  }
+
+  .dark {
+    .NgxEditor__MenuBar {
+      background-color: rgb(var(--dark-bg));
+    }
+    .NgxEditor{
+      background-color: rgb(var(--dark-bg)) !important;
+    }
+    .NgxEditor{
+       border: 1px solid rgba(163, 163, 163, 0.2784313725) !important;
+       border-top-left-radius: inherit !important;
+       border-top-right-radius: inherit !important;
+       border-top: 0px solid #fff !important;
+    }
+    .NgxEditor__Popup {
+      @apply bg-bgdark border border-white/10 #{!important};
+      input {
+        @apply bg-bodybg #{!important};
+        &:focus {
+          @apply border border-white/20;
+        }
+        &:focus-visible {
+          @apply outline-0 #{!important};
+        }
+      }
+    }
+
+    .NgxEditor__MenuItem .NgxEditor__MenuItem--Active {
+      @apply bg-bodybg text-primary #{!important};
+    }
+
+    .NgxEditor__MenuItem,
+    .NgxEditor__Dropdown {
+      &:hover {
+        @apply bg-bodybg #{!important};
+      }
+    }
+
+    .NgxEditor__Dropdown .NgxEditor__Dropdown--Item {
+      &:hover {
+        @apply bg-bodybg #{!important};
+      }
+    }
+
+    .NgxEditor__Content {
+      height: 15rem;
+      color: azure;
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    .NgxEditor__Dropdown .NgxEditor__Dropdown--DropdownMenu {
+      background-color: rgb(var(--dark-bg));
+      border: var(--tw-border-opacity);
+    }
+
+    .NgxEditor__Dropdown .NgxEditor__Dropdown--Selected {
+      background-color: (var(--dark-bg));
+      color: var(--tw-text-opacity);
+    }
+  }
+}
